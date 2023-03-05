@@ -4,7 +4,6 @@ import {Cell, CellState, CellValue, Face, GameStatus} from "../../../../models";
 import {NumberDisplay} from "../NumberDisplay/NumberDisplay";
 import {CellButton} from "../Cell";
 import styles from './Board.module.scss';
-import {Simulate} from "react-dom/test-utils";
 
 
 export const Board: FC = () => {
@@ -22,7 +21,13 @@ export const Board: FC = () => {
             setFace(Face.oh);
         };
         const handleMouseUp = (): void => {
-            setFace(Face.smile);
+            if(gameStatus === GameStatus.lost) {
+                setFace(Face.lost);
+            } else if (gameStatus === GameStatus.won){
+                setFace(Face.won);
+            } else {
+                setFace(Face.smile);
+            }
         };
 
         if (boardRef.current) {
@@ -36,7 +41,7 @@ export const Board: FC = () => {
                 boardRef.current.removeEventListener("mouseup", handleMouseUp);
             }
         };
-    }, [boardRef]);
+    }, [boardRef, gameStatus]);
 
 
     useEffect(() => {

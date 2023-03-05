@@ -2,7 +2,7 @@ import {Cell, CellState, CellValue} from "../models";
 
 export const MAX_ROWS = 16;
 export const MAX_COLS = 16;
-export const BOMB_QUANTITY = 40;
+export const BOMB_QUANTITY = 10;
 
 
 /**
@@ -174,12 +174,11 @@ export const openMultipleCells = (
     if (
         currentCell.state === CellState.visible
     ) {
-        return [grid, 0];
+        return [grid, quantityOfWrongFlags];
     }
 
     if (
-        currentCell.state == CellState.flagged
-    ) {
+        currentCell.state == CellState.flagged) {
         quantityOfWrongFlags++
     }
 
@@ -206,6 +205,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x - 1][y - 1].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x - 1][y - 1].state = CellState.visible;
         }
     }
@@ -216,6 +218,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x - 1][y].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x - 1][y].state = CellState.visible;
         }
     }
@@ -229,6 +234,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x - 1][y + 1].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x - 1][y + 1].state = CellState.visible;
         }
     }
@@ -241,6 +249,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x][y - 1].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x][y - 1].state = CellState.visible;
         }
     }
@@ -254,6 +265,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x][y + 1].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x][y + 1].state = CellState.visible;
         }
     }
@@ -267,6 +281,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x + 1][y - 1].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x + 1][y - 1].state = CellState.visible;
         }
     }
@@ -280,6 +297,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x + 1][y].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x + 1][y].state = CellState.visible;
         }
     }
@@ -293,6 +313,9 @@ export const openMultipleCells = (
             newCells = res[0];
             quantityOfWrongFlags += res[1];
         } else {
+            if (newCells[x + 1][y + 1].state == CellState.flagged) {
+                quantityOfWrongFlags++
+            }
             newCells[x + 1][y + 1].state = CellState.visible;
         }
     }
