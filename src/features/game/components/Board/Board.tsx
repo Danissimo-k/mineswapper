@@ -46,7 +46,7 @@ export const Board: FC = () => {
 
     useEffect(() => {
         // 40 min
-        if (live && time < 2400) {
+        if (live && time <= 2400) {
             const timer = setInterval(() => {
                 setTime(time + 1);
             }, 1000);
