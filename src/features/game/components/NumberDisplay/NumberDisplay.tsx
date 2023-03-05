@@ -37,8 +37,9 @@ const NumberDisplayComponent: React.FC<NumberDisplayProps> = ({ value }) => {
     return (
         <div className={styles.wrapper}>
             {
-                nums.map(num => (
-                    <div className={`${styles.icon} ${numSwitcher(num)}`} />
+                nums.map((num, index) => (
+                    // Wrong format for key, but array it is not large.
+                    <div key={index} className={`${styles.icon} ${numSwitcher(num)}`} />
                 ))
             }
         </div>
