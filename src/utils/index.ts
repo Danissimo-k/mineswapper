@@ -2,7 +2,7 @@ import {Cell, CellState, CellValue} from "../models";
 
 export const MAX_ROWS = 16;
 export const MAX_COLS = 16;
-export const BOMB_QUANTITY = 10;
+export const BOMB_QUANTITY = 40;
 
 
 /**
