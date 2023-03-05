@@ -1,0 +1,20 @@
+
+$border-grey: #7b7b7b;
+
+@mixin borders($left-top: white, $right-bottom: $border-grey) {
+  border-bottom-color: $right-bottom;
+  border-left-color: $left-top;
+  border-right-color: $right-bottom;
+  border-style: solid;
+  border-top-color: $left-top;
+  border-width: 2.75px;
+}
+
+@mixin buttons {
+  &:active {
+    border-bottom-color: white;
+    border-left-color: $border-grey;
+    border-right-color: white;
+    border-top-color: $border-grey;
+  }
+}

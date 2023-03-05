@@ -1,0 +1,82 @@
+@import "../../../../styles/index.scss";
+
+.button {
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+
+  &.icon {
+    background: url('../../../../assets/img.png') no-repeat;
+    background-position: 0 -51px;
+
+    &.question {
+      background-position: -51px -51px;
+
+    }
+
+    &.visible {
+      background-position: -17px -51px;
+
+    }
+
+    &.flagged {
+      background-position: -34px -51px;
+    }
+
+    &.red {
+      background-position: -102px -51px;
+    }
+
+    &.bomb {
+      background-position: -85px -51px;
+
+    }
+
+    &.value1 {
+      background-position: 0 -68px;
+
+    }
+    &.value2 {
+      background-position: -17px -68px;
+    }
+
+    &.value3 {
+      background-position: -34px -68px;
+    }
+
+    &.value4 {
+      background-position: -51px -68px;
+    }
+
+    &.value5 {
+      background-position: -68px -68px;
+    }
+
+    &.value6 {
+      background-position: -85px -68px;
+    }
+
+    &.value7 {
+      background-position: -102px -68px;
+    }
+
+    &.value8 {
+      background-position: -119px -68px;
+
+    }
+
+
+
+
+  }
+
+
+}
+
+
+
+
+

@@ -1,0 +1,59 @@
+@import "../../../../styles/index.scss";
+
+// colors
+$board-background-color: #c2c2c2;
+$board-border-color:  #999999;
+
+
+.board {
+  @include borders(white, $board-border-color);
+  background: $board-background-color;
+  padding: 10px;
+
+
+  .header {
+    @include borders($border-grey, white);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    .face {
+      @include borders;
+      @include buttons;
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      font-size: 35px;
+      height: 35px;
+      justify-content: center;
+      width: 35px;
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        background: url('../../../../assets/img.png') no-repeat;
+      }
+      .smile {
+        background-position: -3px -27px;
+      }
+      .oh {
+        background-position: -57px -27px;
+      }
+      .lost {
+        background-position: -111px -27px;
+      }
+      .won {
+        background-position: -84px -27px;
+      }
+    }
+  }
+
+  .body {
+    @include borders(#7b7b7b, white);
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    margin-top: 10px;
+  }
+
+}
