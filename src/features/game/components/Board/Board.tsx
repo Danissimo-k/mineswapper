@@ -13,7 +13,7 @@ export const Board: FC = () => {
     const [live, setLive] = useState<boolean>(false);
     const [bombCounter, setBombCounter] = useState<number>(BOMB_QUANTITY);
     const [gameStatus, setGameStatus] = useState<GameStatus>(GameStatus.playing);
-    const boardRef = useRef(null);
+    const boardRef = useRef<any>(null);
 
 
     useEffect(() => {
