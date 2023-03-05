@@ -1,0 +1,54 @@
+@import "../../../../styles/index.scss";
+
+.wrapper {
+  height: 24px;
+  color: #ff0701;
+  background: black;
+  text-align: center;
+  font-size: 40px;
+  display: flex;
+
+  .icon {
+    width: 15px;
+    height: 24px;
+    background: url('../../../../assets/img.png') no-repeat;
+  }
+
+  .zero {
+    background-position: -125px 0;
+  }
+
+  .one {
+    background-position: 0 0;
+  }
+
+  .two {
+    background-position: -13px 0;
+  }
+
+  .three {
+    background-position: -27px 0;
+  }
+
+  .four {
+    background-position: -41px 0;
+  }
+
+  .five {
+    background-position: -55px 0;
+  }
+  .six {
+    background-position: -69px 0;
+  }
+  .seven {
+    background-position: -83px 0;
+  }
+  .eight {
+    background-position: -97px 0;
+  }
+  .nine {
+    background-position: -111px 0;
+  }
+
+
+}
